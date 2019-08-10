@@ -3,8 +3,32 @@ import 'bulma/css/bulma.min.css';
 import './resources/css/util.scss';
 import './resources/css/global.css';
 
+import ReduxClient from "@pawjs/redux/client";
+import thunkMiddleware from "redux-thunk"
+import { createLogger } from "redux-logger"
+import reducers from "./reducers";
+
+const loggerMiddleware = createLogger()
+const isProduction = process.env.NODE_ENV === "production"
+
 export default class Client {
   advertiseTimeout = 0;
+
+  constructor({addPlugin}) {
+
+    const reduxClient = new ReduxClient({addPlugin});
+    reduxClient.setReducers(reducers);
+    // If you want to add some redux middleware
+    reduxClient.addMiddleware(thunkMiddleware);
+    if (!isProduction) reduxClient.addMiddleware(loggerMiddleware);
+
+    // If you want to add some redux enahncers
+    // reduxClient.addEnhancer(SomeEnhancer);
+    addPlugin(reduxClient);
+    
+    // ...
+  }
+ 
 
   clearAdvertiseTimeout() {
     if (this.advertiseTimeout) {
@@ -72,5 +96,14 @@ export default class Client {
     clientHandler.hooks.locationChange.tapPromise('ReloadAds', async () => this.advertise());
     clientHandler.hooks.locationChange.tapPromise('ReloadGoogleTrack', async () => Client.googleTrack());
     clientHandler.hooks.renderComplete.tap('ReloadAds', async () => this.advertise());
+    clientHandler
+      .hooks
+      .reduxInitialState
+      .tapPromise("ReduxInitialState", async ({getInitialState, setInitialState}) => {
+        const initialState = Object.assign({}, getInitialState(), AppInitialState);
+        // You can also wait for something async to happen
+        // await fetch("/api/counter/details") and add it to the initial state if needed
+        setInitialState(initialState);
+      });
   }
 }
