@@ -9,7 +9,7 @@ export default class Protected extends React.Component {
     super(props);
     this.state = {
       initialized: false,
-      allow: false,
+      allow: false
     };
   }
 
@@ -20,12 +20,12 @@ export default class Protected extends React.Component {
     if (!isLoggedIn) {
       this.setState({
         initialized: true,
-        allow: false,
+        allow: false
       });
     } else {
       this.setState({
         initialized: true,
-        allow: true,
+        allow: true
       });
     }
   }
@@ -41,11 +41,12 @@ export default class Protected extends React.Component {
       return children;
     }
     return (
-      <Route render={({ staticContext }) => {
-        // eslint-disable-next-line
-        if (staticContext) staticContext.status = 403;
-        return <Redirect to={this.redirectUrl} />;
-      }}
+      <Route
+        render={({ staticContext }) => {
+          // eslint-disable-next-line
+          if (staticContext) staticContext.status = 403;
+          return <Redirect to={this.redirectUrl} />;
+        }}
       />
     );
   }

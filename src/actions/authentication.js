@@ -8,7 +8,10 @@ export const ACTION_TYPES = {
   ERROR_MESSAGE: 'authentication/ERROR_MESSAGE'
 };
 
-export const displayAuthError = message => ({ type: ACTION_TYPES.ERROR_MESSAGE, message });
+export const displayAuthError = message => ({
+  type: ACTION_TYPES.ERROR_MESSAGE,
+  message
+});
 
 export const getSession = () => async (dispatch, getState) => {
   await dispatch({
@@ -23,7 +26,10 @@ export const getSession = () => async (dispatch, getState) => {
   }
 };
 
-export const login = (username, password, rememberMe = false) => async (dispatch, getState) => {
+export const login = (username, password, rememberMe = false) => async (
+  dispatch,
+  getState
+) => {
   const result = await dispatch({
     type: ACTION_TYPES.LOGIN,
     payload: axios.post('api/authenticate', { username, password, rememberMe })
@@ -36,7 +42,10 @@ export const login = (username, password, rememberMe = false) => async (dispatch
   await dispatch(getSession());
 };
 
-export const fblogin = (code, rememberMe = false) => async (dispatch, getState) => {
+export const fblogin = (code, rememberMe = false) => async (
+  dispatch,
+  getState
+) => {
   const result = await dispatch({
     type: ACTION_TYPES.LOGIN,
     payload: axios.get('api/token-exchange?code=' + code)
@@ -50,7 +59,7 @@ export const fblogin = (code, rememberMe = false) => async (dispatch, getState) 
 };
 
 export const clearAuthToken = () => {
-  console.log("clearAuthToken");
+  console.log('clearAuthToken');
 };
 
 export const logout = () => dispatch => {

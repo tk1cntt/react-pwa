@@ -3,7 +3,7 @@ import GuestLayout from './layout/guest/guest-layout';
 
 const { useState } = React;
 
-export default function () {
+export default function() {
   const [counter, setCounter] = useState(0);
   const incrementCounter = (): void => {
     setCounter(counter + 1);
@@ -21,8 +21,7 @@ export default function () {
         <h1 className="title is-size-1">{counter}</h1>
         <button className="button" onClick={decrementCounter}>
           - Decrement
-        </button>
-        {' '}
+        </button>{' '}
         <button className="button" onClick={incrementCounter}>
           Increment +
         </button>

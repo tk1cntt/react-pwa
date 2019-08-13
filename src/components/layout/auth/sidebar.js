@@ -30,7 +30,8 @@ export class Sidebar extends React.Component {
       documentElement = d.documentElement,
       body = d.getElementsByTagName('body')[0],
       width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
-      height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
+      height =
+        w.innerHeight || documentElement.clientHeight || body.clientHeight;
     this.setState({ width, height });
   };
 
@@ -96,7 +97,6 @@ export class Sidebar extends React.Component {
     );
   }
 
-
   staffMenuEx() {
     return (
       <SubMenu
@@ -142,10 +142,20 @@ export class Sidebar extends React.Component {
     return (
       <li className={`${activeMenu === 'order-management' ? 'active' : ''}`}>
         <Link to={'/staff/order-deposited'}>
-          <i className="fa fa-gift" /> <span className="nav-label">Quản lý vận chuyển hàng</span> <span className="fa arrow" />
+          <i className="fa fa-gift" />{' '}
+          <span className="nav-label">Quản lý vận chuyển hàng</span>{' '}
+          <span className="fa arrow" />
         </Link>
-        <ul className={`${activeMenu === 'order-management' ? 'nav nav-second-level collapse in' : 'nav nav-second-level collapse'}`}>
-          <li className={`${activeSubMenu === 'order-deposited' ? 'active' : ''}`}>
+        <ul
+          className={`${
+            activeMenu === 'order-management'
+              ? 'nav nav-second-level collapse in'
+              : 'nav nav-second-level collapse'
+          }`}
+        >
+          <li
+            className={`${activeSubMenu === 'order-deposited' ? 'active' : ''}`}
+          >
             <Link to={'/staff/order-deposited'}>
               <i className="fa fa-sign-in" /> Nhập hàng ở kho Trung Quốc
             </Link>
@@ -155,22 +165,30 @@ export class Sidebar extends React.Component {
               <i className="fa fa-exchange" /> Đóng bao
             </Link>
           </li>
-          <li className={`${activeSubMenu === 'order-purchased' ? 'active' : ''}`}>
+          <li
+            className={`${activeSubMenu === 'order-purchased' ? 'active' : ''}`}
+          >
             <Link to={'/staff/order-purchased'}>
               <i className="fa fa-check-circle" /> Xuất hàng kho Trung Quốc
             </Link>
           </li>
-          <li className={`${activeSubMenu === 'order-purchased' ? 'active' : ''}`}>
+          <li
+            className={`${activeSubMenu === 'order-purchased' ? 'active' : ''}`}
+          >
             <Link to={'/staff/order-purchased'}>
               <i className="fa fa-check-circle" /> Nhập hàng kho Việt Nam
             </Link>
           </li>
-          <li className={`${activeSubMenu === 'order-purchased' ? 'active' : ''}`}>
+          <li
+            className={`${activeSubMenu === 'order-purchased' ? 'active' : ''}`}
+          >
             <Link to={'/staff/order-purchased'}>
               <i className="fa fa-check-circle" /> Đơn hàng yêu cầu giao
             </Link>
           </li>
-          <li className={`${activeSubMenu === 'order-purchased' ? 'active' : ''}`}>
+          <li
+            className={`${activeSubMenu === 'order-purchased' ? 'active' : ''}`}
+          >
             <Link to={'/staff/order-purchased'}>
               <i className="fa fa-check-circle" /> Giao hàng
             </Link>
@@ -232,7 +250,13 @@ export class Sidebar extends React.Component {
 
   showDrawerMenu() {
     return (
-      <Drawer width={235} placement="left" closable={false} onClose={this.onClose} visible={this.props.setting.showDrawer}>
+      <Drawer
+        width={235}
+        placement="left"
+        closable={false}
+        onClose={this.onClose}
+        visible={this.props.setting.showDrawer}
+      >
         {this.showNormalMenu()}
       </Drawer>
     );
@@ -280,7 +304,9 @@ export class Sidebar extends React.Component {
       <nav className="navbar-default navbar-static-side" role="navigation">
         <div className="sidebar-collapse">
           <ul className="nav metismenu" id="side-menu">
-            {this.state.width > 768 ? this.showNormalMenu() : this.showDrawerMenu()}
+            {this.state.width > 768
+              ? this.showNormalMenu()
+              : this.showDrawerMenu()}
           </ul>
         </div>
       </nav>
@@ -290,7 +316,7 @@ export class Sidebar extends React.Component {
 
 const mapStateToProps = ({ authentication, setting }) => ({
   account: authentication.account,
-  setting,
+  setting
 });
 
 const mapDispatchToProps = { showDrawer };

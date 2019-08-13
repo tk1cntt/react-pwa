@@ -251,7 +251,10 @@ ul.nav-second-level {
 .nav-second-level li:last-child {
   margin-bottom: 10px;
 }
-body:not(.fixed-sidebar):not(.canvas-menu).mini-navbar .nav li:hover > .nav-second-level,
+body:not(.fixed-sidebar):not(.canvas-menu).mini-navbar
+  .nav
+  li:hover
+  > .nav-second-level,
 .mini-navbar .nav li:focus > .nav-second-level {
   display: block;
   border-radius: 0 2px 2px 0;
@@ -379,7 +382,8 @@ body.fixed-nav.fixed-nav-basic #wrapper .navbar-static-side {
 body.fixed-nav.fixed-nav-basic.body-small .navbar-fixed-top {
   left: 0;
 }
-body.fixed-nav.fixed-nav-basic.fixed-sidebar.mini-navbar.body-small .navbar-fixed-top {
+body.fixed-nav.fixed-nav-basic.fixed-sidebar.mini-navbar.body-small
+  .navbar-fixed-top {
   left: 220px;
 }
 .fixed-nav .minimalize-styl-2 {
@@ -453,11 +457,23 @@ body.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
   display: block;
   height: auto;
 }
-body.fixed-sidebar.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
+body.fixed-sidebar.mini-navbar
+  .navbar-default
+  .nav
+  > li
+  > .nav-second-level
+  li
+  a {
   font-size: 12px;
   border-radius: 3px;
 }
-body.canvas-menu.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
+body.canvas-menu.mini-navbar
+  .navbar-default
+  .nav
+  > li
+  > .nav-second-level
+  li
+  a {
   font-size: 13px;
   border-radius: 3px;
 }
@@ -2332,12 +2348,42 @@ div.dt-button-info {
   border: 1px dashed #bbb;
   min-height: 100px;
   background-color: #e5e5e5;
-  background-image: -webkit-linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff),
-    -webkit-linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff);
-  background-image: -moz-linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff),
-    -moz-linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff);
-  background-image: linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff),
-    linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff);
+  background-image: -webkit-linear-gradient(
+      45deg,
+      #ffffff 25%,
+      transparent 25%,
+      transparent 75%,
+      #ffffff 75%,
+      #ffffff
+    ),
+    -webkit-linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff
+          75%, #ffffff);
+  background-image: -moz-linear-gradient(
+      45deg,
+      #ffffff 25%,
+      transparent 25%,
+      transparent 75%,
+      #ffffff 75%,
+      #ffffff
+    ),
+    -moz-linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff
+          75%, #ffffff);
+  background-image: linear-gradient(
+      45deg,
+      #ffffff 25%,
+      transparent 25%,
+      transparent 75%,
+      #ffffff 75%,
+      #ffffff
+    ),
+    linear-gradient(
+      45deg,
+      #ffffff 25%,
+      transparent 25%,
+      transparent 75%,
+      #ffffff 75%,
+      #ffffff
+    );
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
 }
@@ -2374,7 +2420,8 @@ div.dt-button-info {
   width: 100%;
   font-size: 0.75em;
   line-height: 1.333333em;
-  font-family: open sans, lucida grande, lucida sans unicode, helvetica, arial, sans-serif;
+  font-family: open sans, lucida grande, lucida sans unicode, helvetica, arial,
+    sans-serif;
   padding: 5px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2707,8 +2754,12 @@ a.forum-item-title:hover {
 .dark-timeline.center-orientation .vertical-timeline-content:before {
   border-color: transparent transparent transparent #f5f5f5;
 }
-.dark-timeline .vertical-timeline-block:nth-child(2n) .vertical-timeline-content:before,
-.dark-timeline.center-orientation .vertical-timeline-block:nth-child(2n) .vertical-timeline-content:before {
+.dark-timeline
+  .vertical-timeline-block:nth-child(2n)
+  .vertical-timeline-content:before,
+.dark-timeline.center-orientation
+  .vertical-timeline-block:nth-child(2n)
+  .vertical-timeline-content:before {
   border-color: transparent #f5f5f5 transparent transparent;
 }
 .dark-timeline .vertical-timeline-content,
@@ -2863,20 +2914,30 @@ a.forum-item-title:hover {
     top: 2px;
     font-size: 14px;
   }
-  .center-orientation .vertical-timeline-block:nth-child(even) .vertical-timeline-content {
+  .center-orientation
+    .vertical-timeline-block:nth-child(even)
+    .vertical-timeline-content {
     float: right;
   }
-  .center-orientation .vertical-timeline-block:nth-child(even) .vertical-timeline-content::before {
+  .center-orientation
+    .vertical-timeline-block:nth-child(even)
+    .vertical-timeline-content::before {
     top: 24px;
     left: auto;
     right: 100%;
     border-color: transparent;
     border-right-color: white;
   }
-  .center-orientation .vertical-timeline-block:nth-child(even) .vertical-timeline-content .btn {
+  .center-orientation
+    .vertical-timeline-block:nth-child(even)
+    .vertical-timeline-content
+    .btn {
     float: right;
   }
-  .center-orientation .vertical-timeline-block:nth-child(even) .vertical-timeline-content .vertical-date {
+  .center-orientation
+    .vertical-timeline-block:nth-child(even)
+    .vertical-timeline-content
+    .vertical-date {
     left: auto;
     right: 122%;
     text-align: right;
@@ -3173,10 +3234,12 @@ a.forum-item-title:hover {
   border-color: #e7eaec;
 }
 .select2-container--default.select2-container--focus .select2-selection--single,
-.select2-container--default.select2-container--focus .select2-selection--multiple {
+.select2-container--default.select2-container--focus
+  .select2-selection--multiple {
   border-color: #1ab394;
 }
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
+.select2-container--default
+  .select2-results__option--highlighted[aria-selected] {
   background-color: #1ab394;
 }
 .select2-container--default .select2-search--dropdown .select2-search__field {
@@ -6101,7 +6164,8 @@ body.body-small .vote-icon {
     transform: translateX(42px) translateY(42px) rotate(-180deg);
   }
   75% {
-    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg)
+      scale(0.5);
     transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
   }
   100% {
@@ -6124,7 +6188,8 @@ body.body-small .vote-icon {
     transform: translateX(42px) translateY(42px) rotate(-180deg);
   }
   75% {
-    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg)
+      scale(0.5);
     transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
   }
   100% {
@@ -7953,9 +8018,24 @@ body.skin-2 #wrapper {
 }
 .skin-2 #page-wrapper {
   background: #f6f6f6;
-  background: -webkit-radial-gradient(center, ellipse cover, #f6f6f6 20%, #d5d5d5 100%);
-  background: -o-radial-gradient(center, ellipse cover, #f6f6f6 20%, #d5d5d5 100%);
-  background: -ms-radial-gradient(center, ellipse cover, #f6f6f6 20%, #d5d5d5 100%);
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #f6f6f6 20%,
+    #d5d5d5 100%
+  );
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    #f6f6f6 20%,
+    #d5d5d5 100%
+  );
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    #f6f6f6 20%,
+    #d5d5d5 100%
+  );
   background: radial-gradient(ellipse at center, #f6f6f6 20%, #d5d5d5 100%);
   -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#f6f6f6, endColorstr=#d5d5d5)';
 }
@@ -8143,7 +8223,8 @@ body.md-skin {
   margin-bottom: 25px;
   margin-top: 0;
   padding: 0;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .md-skin .ibox.border-bottom {
   border-bottom: none !important;
@@ -8171,7 +8252,8 @@ body.md-skin {
 }
 .md-skin #nestable-output,
 .md-skin #nestable2-output {
-  font-family: 'Roboto', lucida grande, lucida sans unicode, helvetica, arial, sans-serif;
+  font-family: 'Roboto', lucida grande, lucida sans unicode, helvetica, arial,
+    sans-serif;
 }
 .md-skin .landing-page {
   font-family: 'Roboto', helvetica, arial, sans-serif;
@@ -8277,13 +8359,16 @@ body.md-skin {
 .md-skin .navbar-fixed-top,
 .md-skin .navbar-static-top {
   background-color: #1ab394 !important;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .md-skin .navbar-static-side {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .md-skin #right-sidebar {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
   border: none;
   z-index: 900;
 }
@@ -8292,7 +8377,8 @@ body.md-skin {
   background: #fff !important;
 }
 .md-skin .contact-box {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
   border: none;
 }
 .md-skin .dashboard-header {
@@ -8300,7 +8386,8 @@ body.md-skin {
   border-top: 0;
   padding: 20px 20px 20px 20px;
   margin: 30px 20px 0 20px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 @media (max-width: 768px) {
   .md-skin .dashboard-header {
@@ -8308,15 +8395,18 @@ body.md-skin {
   }
 }
 .md-skin ul.notes li div {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .md-skin .file {
   border: none;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .md-skin .mail-box {
   background-color: #ffffff;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
   padding: 0;
   margin-bottom: 20px;
   border: none;
@@ -8324,7 +8414,8 @@ body.md-skin {
 .md-skin .mail-box-header {
   border: none;
   background-color: #ffffff;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
   padding: 30px 20px 20px 20px;
 }
 .md-skin .mailbox-content {
@@ -8336,7 +8427,8 @@ body.md-skin {
   border: none;
   background: #fff;
   margin-bottom: 15px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .md-skin.landing-page .navbar-default {
   background-color: transparent !important;
@@ -8377,7 +8469,8 @@ body.md-skin {
 }
 .md-skin.mini-navbar .nav-second-level {
   background-color: #ffffff;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .md-skin.mini-navbar .nav-second-level li a {
   padding-left: 0;

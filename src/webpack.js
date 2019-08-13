@@ -7,10 +7,8 @@ export default class ProjectWebpack {
     // Add sass compiler to the project
     addPlugin(new SassPlugin());
     const optimizerOptions = {
-      supportedEnv: [
-        'production',
-      ],
-      configLabel: 'MEDIUM_QUALITY',
+      supportedEnv: ['production'],
+      configLabel: 'MEDIUM_QUALITY'
     };
     addPlugin(new ImageOptimizer(optimizerOptions));
 

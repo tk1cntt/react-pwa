@@ -14,4 +14,4 @@ export default function setting(state = initialState, action) {
     default:
       return state;
   }
-};
+}

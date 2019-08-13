@@ -59,7 +59,8 @@ export default (state = initialState, action) => {
         showModalLogin: true
       };
     case SUCCESS(ACTION_TYPES.GET_SESSION): {
-      const isAuthenticated = action.payload && action.payload.data && action.payload.data.activated;
+      const isAuthenticated =
+        action.payload && action.payload.data && action.payload.data.activated;
       return {
         ...state,
         isAuthenticated,

@@ -7,4 +7,4 @@ export default function showDrawer(value) {
     type: SHOW_DRAWER,
     payload: value
   };
-};
+}

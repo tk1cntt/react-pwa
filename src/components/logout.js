@@ -8,14 +8,14 @@ export default class Logout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      logout: false,
+      logout: false
     };
   }
 
   componentDidMount() {
     Authenticator.logout();
     this.setState({
-      logout: true,
+      logout: true
     });
   }
 

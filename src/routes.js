@@ -7,17 +7,13 @@ export default class Routes {
   apply(routeHandler) {
     routeHandler.setPwaSchema({
       name: 'ReactPWA',
-      short_name: 'ReactPWA',
+      short_name: 'ReactPWA'
     });
     routeHandler.setDefaultSeoSchema({
-      title: 'ReactPWA',
+      title: 'ReactPWA'
     });
 
-    const routes = [
-      ...GuestRoutes,
-      ...AuthRoutes,
-      ...SplashScreen,
-    ];
+    const routes = [...GuestRoutes, ...AuthRoutes, ...SplashScreen];
 
     routeHandler.hooks.initRoutes.tapPromise('AppRoutes', async () => {
       routeHandler.addRoutes(routes);

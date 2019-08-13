@@ -5,26 +5,19 @@ import GuestLayout from './layout/guest/guest-layout';
 
 import runtime from '../actions/runtime';
 
-const Column = (props) => {
+const Column = props => {
   const { title, description, link } = props;
   return (
     <div className="column">
       <div className="card">
         <header className="card-header">
-          <p className="card-header-title">
-            {title}
-          </p>
+          <p className="card-header-title">{title}</p>
         </header>
         <div className="card-content">
           <div className="content">
-            {description}
-            {' '}
+            {description}{' '}
             {!!link.length && (
-              <a
-                href={link}
-                target="_blank"
-                rel="noreferrer noopener nofollow"
-              >
+              <a href={link} target="_blank" rel="noreferrer noopener nofollow">
                 Read more
               </a>
             )}
@@ -37,12 +30,12 @@ const Column = (props) => {
 Column.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired
 };
 
 class Home extends React.Component {
   componentDidMount() {
-    this.props.runtime({name : "runtime", value: new Date().getTime()});
+    this.props.runtime({ name: 'runtime', value: new Date().getTime() });
   }
   render() {
     console.log(this.props.runtimeObject);
@@ -51,21 +44,17 @@ class Home extends React.Component {
         <section className="hero is-medium is-info is-bold">
           <div className="hero-body">
             <div className="container">
-              <h1 className="title">
-                Features
-              </h1>
-              <h2 className="subtitle">
-                There are no limits for creativity
-              </h2>
+              <h1 className="title">Features</h1>
+              <h2 className="subtitle">There are no limits for creativity</h2>
             </div>
           </div>
         </section>
         <section className="m-t-lg">
           <div className="container p-l-md p-r-md">
             <h4 className="title is-4">
-              ReactPWA is configurable to the core.
-              You can add plugins as you like to extend the features or
-              you can use a bare minimum to start from scratch.
+              ReactPWA is configurable to the core. You can add plugins as you
+              like to extend the features or you can use a bare minimum to start
+              from scratch.
             </h4>
             <div className="columns">
               <Column
@@ -133,22 +122,22 @@ class Home extends React.Component {
 
 //*
 Home.defaultProps = {
-  runtimeObject: {},
+  runtimeObject: {}
 };
 
 Home.propTypes = {
-  runtime: PropTypes.func.isRequired,
+  runtime: PropTypes.func.isRequired
 };
 
 const mapState = state => ({
-  runtimeObject: state.runtime,
+  runtimeObject: state.runtime
 });
 
 const mapDispatch = {
-  runtime,
+  runtime
 };
 
 export default connect(
   mapState,
-  mapDispatch,
+  mapDispatch
 )(Home);

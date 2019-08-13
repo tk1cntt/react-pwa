@@ -13,7 +13,7 @@ export default class Login extends React.Component {
       loaded: false,
       loggedIn: false,
       error: '',
-      errorMsg: '',
+      errorMsg: ''
     };
   }
 
@@ -22,11 +22,11 @@ export default class Login extends React.Component {
     if (isLoggedIn) {
       this.setState({
         loaded: true,
-        loggedIn: true,
+        loggedIn: true
       });
     } else {
       this.setState({
-        loaded: true,
+        loaded: true
       });
     }
   }
@@ -39,23 +39,18 @@ export default class Login extends React.Component {
     if (username !== 'demo' || password !== 'demo') {
       this.setState({
         error: username !== 'demo' ? 'username' : 'password',
-        errorMsg: 'Please use username:password as demo:demo',
+        errorMsg: 'Please use username:password as demo:demo'
       });
     } else {
       cookie.setItem('secretKey', 'allowmein');
       this.setState({
-        loggedIn: true,
+        loggedIn: true
       });
     }
   }
 
   render() {
-    const {
-      loggedIn,
-      error,
-      errorMsg,
-      loaded,
-    } = this.state;
+    const { loggedIn, error, errorMsg, loaded } = this.state;
     if (!loaded) return null;
     if (loggedIn) {
       return <Redirect push={false} to={this.onLoginRedirectUrl} />;
@@ -75,7 +70,9 @@ export default class Login extends React.Component {
                         defaultValue="demo"
                         id="username"
                         name="username"
-                        className={`input ${error === 'username' ? 'is-danger' : ''}`}
+                        className={`input ${
+                          error === 'username' ? 'is-danger' : ''
+                        }`}
                         type="text"
                         placeholder="Username input"
                       />
@@ -90,7 +87,9 @@ export default class Login extends React.Component {
                         defaultValue="demo"
                         id="password"
                         name="password"
-                        className={`input ${error === 'password' ? 'is-danger' : ''}`}
+                        className={`input ${
+                          error === 'password' ? 'is-danger' : ''
+                        }`}
                         type="password"
                         placeholder="********"
                       />
@@ -99,16 +98,12 @@ export default class Login extends React.Component {
                 </div>
                 <div className="field is-grouped">
                   <div className="control">
-                    <button type="submit" className="button is-link">Login</button>
+                    <button type="submit" className="button is-link">
+                      Login
+                    </button>
                   </div>
                 </div>
-                {
-                  error !== '' && (
-                    <p className="help is-danger">
-                      {errorMsg}
-                    </p>
-                  )
-                }
+                {error !== '' && <p className="help is-danger">{errorMsg}</p>}
               </form>
             </div>
           </div>

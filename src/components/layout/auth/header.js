@@ -5,14 +5,14 @@ import { NavLink as Link } from 'react-router-dom';
 import showDrawer from '../../../actions/setting';
 
 export class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showModal: true,
-            width: 0,
-            height: 0
-        };
-      }
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: true,
+      width: 0,
+      height: 0
+    };
+  }
 
   componentDidMount() {
     this.updateDimensions();
@@ -29,7 +29,8 @@ export class Header extends React.Component {
       documentElement = d.documentElement,
       body = d.getElementsByTagName('body')[0],
       width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
-      height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
+      height =
+        w.innerHeight || documentElement.clientHeight || body.clientHeight;
     this.setState({ width, height });
   };
 
@@ -40,7 +41,10 @@ export class Header extends React.Component {
   navbarMinimalizeButton = () => {
     if (this.state.width <= 768) {
       return (
-        <div className="navbar-minimalize minimalize-styl-2 btn btn-primary" onClick={this.openMiniNavbar()}>
+        <div
+          className="navbar-minimalize minimalize-styl-2 btn btn-primary"
+          onClick={this.openMiniNavbar()}
+        >
           <i className="fa fa-bars" />{' '}
         </div>
       );
@@ -51,7 +55,11 @@ export class Header extends React.Component {
     return (
       <>
         <div className="row border-bottom">
-          <nav className="navbar navbar-static-top" role="navigation" style={{ marginBottom: 0 }}>
+          <nav
+            className="navbar navbar-static-top"
+            role="navigation"
+            style={{ marginBottom: 0 }}
+          >
             <div className="navbar-header">{this.navbarMinimalizeButton()}</div>
             <ul className="nav navbar-top-links navbar-right">
               <li>

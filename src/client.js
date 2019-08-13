@@ -4,20 +4,19 @@ import './resources/css/util.scss';
 import './resources/css/global.scss';
 import './resources/css/style.css';
 
-import ReduxClient from "@pawjs/redux/client";
-import thunkMiddleware from "redux-thunk"
-import { createLogger } from "redux-logger"
-import reducers from "./reducers";
+import ReduxClient from '@pawjs/redux/client';
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
+import reducers from './reducers';
 
-const loggerMiddleware = createLogger()
-const isProduction = process.env.NODE_ENV === "production"
+const loggerMiddleware = createLogger();
+const isProduction = process.env.NODE_ENV === 'production';
 
 export default class Client {
   advertiseTimeout = 0;
 
-  constructor({addPlugin}) {
-
-    const reduxClient = new ReduxClient({addPlugin});
+  constructor({ addPlugin }) {
+    const reduxClient = new ReduxClient({ addPlugin });
     reduxClient.setReducers(reducers);
     // If you want to add some redux middleware
     reduxClient.addMiddleware(thunkMiddleware);
@@ -26,10 +25,9 @@ export default class Client {
     // If you want to add some redux enahncers
     // reduxClient.addEnhancer(SomeEnhancer);
     addPlugin(reduxClient);
-    
+
     // ...
   }
- 
 
   clearAdvertiseTimeout() {
     if (this.advertiseTimeout) {
@@ -53,9 +51,14 @@ export default class Client {
             if (jsCodefund.src) {
               const newJsCodefund = document.createElement('script');
               setTimeout(() => {
-                newJsCodefund.src = `${jsCodefund.getAttribute('data-src')}?v=${(new Date()).getTime()}`;
+                newJsCodefund.src = `${jsCodefund.getAttribute(
+                  'data-src'
+                )}?v=${new Date().getTime()}`;
                 newJsCodefund.id = jsCodefund.id;
-                newJsCodefund.setAttribute('data-src', jsCodefund.getAttribute('data-src'));
+                newJsCodefund.setAttribute(
+                  'data-src',
+                  jsCodefund.getAttribute('data-src')
+                );
                 jsCodefund.remove();
                 document.body.append(newJsCodefund);
               }, 100);
@@ -73,7 +76,10 @@ export default class Client {
             setTimeout(() => {
               newJsCodefund.src = `${jsCodefund.getAttribute('data-src')}`;
               newJsCodefund.id = jsCodefund.id;
-              newJsCodefund.setAttribute('data-src', jsCodefund.getAttribute('data-src'));
+              newJsCodefund.setAttribute(
+                'data-src',
+                jsCodefund.getAttribute('data-src')
+              );
               jsCodefund.remove();
               document.body.append(newJsCodefund);
             }, 100);
@@ -88,23 +94,34 @@ export default class Client {
   static googleTrack() {
     if (typeof window.gtag === 'function') {
       window.gtag('config', 'UA-108804791-2', {
-        page_path: window.location.pathname,
+        page_path: window.location.pathname
       });
     }
   }
 
   apply(clientHandler) {
-    clientHandler.hooks.locationChange.tapPromise('ReloadAds', async () => this.advertise());
-    clientHandler.hooks.locationChange.tapPromise('ReloadGoogleTrack', async () => Client.googleTrack());
-    clientHandler.hooks.renderComplete.tap('ReloadAds', async () => this.advertise());
-    clientHandler
-      .hooks
-      .reduxInitialState
-      .tapPromise("ReduxInitialState", async ({getInitialState, setInitialState}) => {
-        const initialState = Object.assign({}, getInitialState(), AppInitialState);
+    clientHandler.hooks.locationChange.tapPromise('ReloadAds', async () =>
+      this.advertise()
+    );
+    clientHandler.hooks.locationChange.tapPromise(
+      'ReloadGoogleTrack',
+      async () => Client.googleTrack()
+    );
+    clientHandler.hooks.renderComplete.tap('ReloadAds', async () =>
+      this.advertise()
+    );
+    clientHandler.hooks.reduxInitialState.tapPromise(
+      'ReduxInitialState',
+      async ({ getInitialState, setInitialState }) => {
+        const initialState = Object.assign(
+          {},
+          getInitialState(),
+          AppInitialState
+        );
         // You can also wait for something async to happen
         // await fetch("/api/counter/details") and add it to the initial state if needed
         setInitialState(initialState);
-      });
+      }
+    );
   }
 }
