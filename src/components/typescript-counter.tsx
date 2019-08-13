@@ -1,5 +1,5 @@
 import * as React from 'react';
-import GuestLayout from './guest-layout';
+import GuestLayout from './layout/guest/guest-layout';
 
 const { useState } = React;
 

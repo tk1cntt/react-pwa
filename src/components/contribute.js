@@ -1,5 +1,5 @@
 import React from 'react';
-import GuestLayout from './guest-layout';
+import GuestLayout from './layout/guest/guest-layout';
 
 export default () => (
   <GuestLayout>

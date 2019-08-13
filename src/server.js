@@ -32,7 +32,9 @@ export default class Server {
       head.push(<link key="dns-precache-codefund" rel="preconnect" href="https://codefund.app" />);
       head.push(<link key="dns-precache-google-analytics" rel="preconnect" href="https://www.google-analytics.com" />);
       head.push(<link key="dns-precache-googletagmanager" rel="preconnect" href="https://www.googletagmanager.com" />);
+      // head.push(<link key="bootstrap-lib" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>);
       head.push(<link key="antd-lib" async rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.10.4/antd.min.css"/>);
+      head.push(<link key="awesome-lib" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>);
       // head.push(<script key="antd-lib" async src="https://cdnjs.cloudflare.com/ajax/libs/antd/3.10.4/antd.min.css"/>);
       head.push(<meta key="meta-theme-color" name="theme-color" content="#209cee" />);
       //

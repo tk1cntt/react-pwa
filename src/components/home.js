@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import GuestLayout from './guest-layout';
+import GuestLayout from './layout/guest/guest-layout';
 
 import runtime from '../actions/runtime';
 

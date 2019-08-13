@@ -1,5 +1,5 @@
 import React from 'react';
-import GuestLayout from './guest-layout';
+import GuestLayout from './layout/guest/guest-layout';
 
 const stripTags = (s, elip = true, l = 60) => `${s.replace(/(<([^>]+)>)/ig, '').replace(/[^a-zA-Z0-9\s]/g, ' ').substr(0, l)} ${elip ? '...' : ''}`;
 export default (props) => {

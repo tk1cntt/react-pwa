@@ -1,6 +1,6 @@
 import React from 'react';
 import Picture from '@pawjs/srcset/picture';
-import GuestLayout from './guest-layout';
+import GuestLayout from './layout/guest/guest-layout';
 // eslint-disable-next-line
 import CatDog from '../resources/img/dog-cat.jpg';
 // eslint-disable-next-line

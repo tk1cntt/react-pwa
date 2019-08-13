@@ -55,6 +55,7 @@
   },
   "snyk": true,
   "devDependencies": {
-    "webpack-bundle-analyzer": "^3.4.1"
+    "webpack-bundle-analyzer": "^3.4.1",
+    "prettier": "^1.18.2"
   }
 }
